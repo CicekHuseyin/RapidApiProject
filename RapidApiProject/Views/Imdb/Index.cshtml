@@ -1,0 +1,25 @@
+﻿@model List<ApiMovieListViewModel>
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<div class="container">
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>Film Adı</th>
+            <th>Açıklaması</th>
+            <th>Fragman</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.rank</td>
+                <td>@item.title</td>
+                <td>@item.description</td>
+                <td><a href="@item.imdb_link" class="btn btn-warning">Fragmanı Aç</a></td>
+            </tr>
+        }
+    </table>
+</div>
